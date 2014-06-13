@@ -3,6 +3,7 @@ package de.tuc.emla.geoerde;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +38,6 @@ public class MainActivity extends ActionBarActivity
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -61,9 +61,10 @@ public class MainActivity extends ActionBarActivity
         if (id == R.id.action_about)
         {
         	// Display the fragment as the main content.
-            getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new AboutFragment())
-                    .commit();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new AboutFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
             return true;
         }
         return super.onOptionsItemSelected(item);

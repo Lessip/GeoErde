@@ -40,8 +40,8 @@
         android:layout_alignLeft="@+id/imageViewMap"
         android:layout_below="@+id/spinnerContent"
         android:contentDescription="Button right arrow"
-        android:src="@drawable/icon_question"
-        android:onClick="buttonQuiz" />
+        android:onClick="buttonQuiz"
+        android:src="@drawable/icon_question" />
 
     <ImageButton
         android:id="@+id/buttonStatistics"
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/spinnerContent"
         android:layout_alignTop="@+id/buttonQuiz"
-        android:gravity="center_vertical|center_horizontal"
         android:contentDescription="Button right arrow"
-        android:src="@drawable/icon_statistics"
-        android:onClick="buttonStatistics" />
+        android:gravity="center_vertical|center_horizontal"
+        android:onClick="buttonStatistics"
+        android:src="@drawable/icon_statistics" />
 
 </RelativeLayout>
