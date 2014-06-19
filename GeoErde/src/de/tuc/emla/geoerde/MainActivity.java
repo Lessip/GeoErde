@@ -37,6 +37,11 @@ public class MainActivity extends ActionBarActivity
                     .commit();
         }
     }
+    
+    protected void onResume(Bundle savedInstanceState)
+    {
+    	if(D) Log.d(LOGCAT, "onResume...");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

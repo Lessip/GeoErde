@@ -25,8 +25,6 @@ public class AboutFragment extends Fragment implements OnClickListener
 	{
 		TextView tv;
 		
-		container.removeAllViews();
-		
 		View view = inflater.inflate(R.layout.fragment_about, container, false);
 				
 		tv = (TextView) view.findViewById(R.id.textAbout);
@@ -44,10 +42,11 @@ public class AboutFragment extends Fragment implements OnClickListener
 	{
 		if(D) Log.d(LOGCAT, "Exit pressed...");
 		FragmentManager fm = getFragmentManager();
-	    if (fm.getBackStackEntryCount() > 0)
+		if (fm.getBackStackEntryCount() > 0)
 	    {
 	    	if(D) Log.i(LOGCAT, "popping backstack");
-	        fm.popBackStack();
+	        fm.popBackStack();	        
 	    }
+	    return;
     }
 }
