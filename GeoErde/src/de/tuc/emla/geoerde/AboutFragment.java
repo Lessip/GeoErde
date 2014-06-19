@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 public class AboutFragment extends Fragment implements OnClickListener
 {
@@ -23,26 +23,26 @@ public class AboutFragment extends Fragment implements OnClickListener
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		Button btn;
+		TextView tv;
 		
 		container.removeAllViews();
 		
 		View view = inflater.inflate(R.layout.fragment_about, container, false);
 				
-		btn = (Button) view.findViewById(R.id.buttonAbout);
-        btn.setOnClickListener(this);
+		tv = (TextView) view.findViewById(R.id.textAbout);
+		tv.setOnClickListener(this);
         
         return view;
 	}
 	
 	/**
-     * The eventHandler for the statistics-button
+     * The eventHandler for the fragment screen
      * @param view the view of the main activity
      */
 	@Override
     public void onClick(View v)
 	{
-		if(D) Log.d(LOGCAT, "Exit button pressed...");
+		if(D) Log.d(LOGCAT, "Exit pressed...");
 		FragmentManager fm = getFragmentManager();
 	    if (fm.getBackStackEntryCount() > 0)
 	    {
