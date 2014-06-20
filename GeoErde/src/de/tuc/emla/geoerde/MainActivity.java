@@ -43,6 +43,23 @@ public class MainActivity extends ActionBarActivity
     {
     	if(D) Log.d(LOGCAT, "onResume...");
     }
+    
+    @Override
+    public void onBackPressed()
+    {
+    	if(D) Log.d(LOGCAT, "Back pressed...");
+		FragmentManager fm = getFragmentManager();
+		if (fm.getBackStackEntryCount() > 0)
+	    {
+	    	if(D) Log.i(LOGCAT, "popping backstack");
+	        fm.popBackStack();	        
+	    }
+		else
+		{
+			super.onBackPressed();
+		}
+	    return;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
