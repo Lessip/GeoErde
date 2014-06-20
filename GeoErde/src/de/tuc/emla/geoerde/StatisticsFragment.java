@@ -1,34 +1,34 @@
 package de.tuc.emla.geoerde;
 
+import android.os.Bundle;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 
-public class AboutFragment extends Fragment implements OnClickListener
+public class StatisticsFragment extends Fragment implements OnClickListener
 {
-	public AboutFragment()
+	public StatisticsFragment()
     {
     }
 	
 	// logging output
-	private static final String LOGCAT = "GeoErde-FragmentAbout";
+	private static final String LOGCAT = "GeoErde-FragmentStatistic";
 	private static final boolean D = true;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		TextView tv;
+		LinearLayout llayout;
 		
-		View view = inflater.inflate(R.layout.fragment_about, container, false);
+		View view = inflater.inflate(R.layout.fragment_statistics, container, false);
 				
-		tv = (TextView) view.findViewById(R.id.textAbout);
-		tv.setOnClickListener(this);
+		llayout = (LinearLayout) view.findViewById(R.id.layout_statistics);
+		llayout.setOnClickListener(this);
         
         return view;
 	}

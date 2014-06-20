@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/action_settings" >
+    <EditTextPreference
+	    android:title="@string/label_firstname"
+    	android:inputType="text" android:summary="@string/desc_firstname"
+        android:key="firstname"
+        android:persistent="true"
+        android:defaultValue="@string/def_firstname">	   
+	</EditTextPreference>
+
+</PreferenceScreen>

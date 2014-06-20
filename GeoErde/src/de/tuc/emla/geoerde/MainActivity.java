@@ -2,8 +2,9 @@ package de.tuc.emla.geoerde;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,7 +33,7 @@ public class MainActivity extends ActionBarActivity
 
         if (savedInstanceState == null)
         {
-            getSupportFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
@@ -59,20 +60,29 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-//        if (id == R.id.action_settings)
-//        {
-//            return true;
-//        }
-        if (id == R.id.action_about)
+        FragmentTransaction transaction;
+        FragmentManager.enableDebugLogging(D);
+        switch (id)
         {
+        case R.id.action_settings:
+        	// Start a new activity for the preferences
+			Intent intent = new Intent(this, PreferencesActivity.class);
+			startActivity(intent);
+        	break;
+
+        case R.id.action_about:
         	// Display the fragment as the main content.
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
+            transaction = getFragmentManager().beginTransaction()
                     .replace(android.R.id.content, new AboutFragment());
             transaction.addToBackStack(null);
             transaction.commit();
-            return true;
+            break;
+            
+        default:
+        	super.onOptionsItemSelected(item);
+            break;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     /**
@@ -114,7 +124,10 @@ public class MainActivity extends ActionBarActivity
     public void buttonStatistics(View view)
     {
     	if(D) Log.d(LOGCAT, "Statistics button pressed...");
-    	
-    	
+    	// Display the fragment as the main content.
+    	FragmentTransaction transaction = getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new StatisticsFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();    	
     }
 }
