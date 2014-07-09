@@ -34,24 +34,21 @@
 
     <ImageButton
         android:id="@+id/buttonQuiz"
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageViewMap"
         android:layout_below="@+id/spinnerContent"
-        android:contentDescription="Button right arrow"
+        android:contentDescription="Quiz button"
         android:onClick="buttonQuiz"
         android:src="@drawable/icon_question" />
 
     <ImageButton
         android:id="@+id/buttonStatistics"
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/spinnerContent"
         android:layout_alignTop="@+id/buttonQuiz"
-        android:contentDescription="Button right arrow"
-        android:gravity="center_vertical|center_horizontal"
+        android:contentDescription="Statistics button"
         android:onClick="buttonStatistics"
         android:src="@drawable/icon_statistics" />
 

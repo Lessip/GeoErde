@@ -78,7 +78,7 @@ public class MainActivity extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         FragmentTransaction transaction;
-        FragmentManager.enableDebugLogging(D);
+//		FragmentManager.enableDebugLogging(D);
         switch (id)
         {
         case R.id.action_settings:
