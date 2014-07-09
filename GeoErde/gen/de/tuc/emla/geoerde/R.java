@@ -1081,11 +1081,13 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int bg_map=0x7f020057;
-        public static final int ic_launcher=0x7f020058;
-        public static final int icon_arrow_left_red=0x7f020059;
-        public static final int icon_arrow_right_green=0x7f02005a;
-        public static final int icon_question=0x7f02005b;
-        public static final int icon_statistics=0x7f02005c;
+        public static final int correct=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int icon_arrow_left_red=0x7f02005a;
+        public static final int icon_arrow_right_green=0x7f02005b;
+        public static final int icon_question=0x7f02005c;
+        public static final int icon_statistics=0x7f02005d;
+        public static final int wrong=0x7f02005e;
     }
     public static final class id {
         public static final int action_about=0x7f060048;
