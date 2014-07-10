@@ -30,8 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/labelLessons"
-        android:layout_alignLeft="@+id/labelLessons"
-        android:entries="@array/lessons_array" />
+        android:layout_alignLeft="@+id/labelLessons" />
 
     <ImageButton
         android:id="@+id/buttonQuiz"
