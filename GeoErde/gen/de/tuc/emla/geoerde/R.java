@@ -1090,7 +1090,7 @@ containing a value of this type.
         public static final int wrong=0x7f02005e;
     }
     public static final class id {
-        public static final int action_about=0x7f060048;
+        public static final int action_about=0x7f06004e;
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1102,7 +1102,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060047;
+        public static final int action_settings=0x7f06004d;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1125,10 +1125,14 @@ containing a value of this type.
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
         public static final int imageViewMap=0x7f06003e;
+        public static final int labelHeader=0x7f060044;
+        public static final int labelIcon=0x7f060047;
+        public static final int labelLesson=0x7f060045;
         public static final int labelLessons=0x7f06003f;
+        public static final int labelResult=0x7f060046;
         public static final int layout_statistics=0x7f060043;
+        public static final int linearLayoutResults=0x7f060049;
         public static final int listMode=0x7f060001;
-        public static final int listViewResults=0x7f060045;
         public static final int list_item=0x7f060029;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
@@ -1137,6 +1141,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
+        public static final int scrollViewResults=0x7f060048;
         public static final int search_badge=0x7f060032;
         public static final int search_bar=0x7f060031;
         public static final int search_button=0x7f060033;
@@ -1156,8 +1161,9 @@ containing a value of this type.
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
         public static final int textAbout=0x7f06003d;
-        public static final int textHeader=0x7f060044;
-        public static final int textViewFazit=0x7f060046;
+        public static final int textFazit=0x7f06004c;
+        public static final int textLesson=0x7f06004a;
+        public static final int textResult=0x7f06004b;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
@@ -1276,10 +1282,17 @@ containing a value of this type.
         public static final int hello_maria=0x7f0b000f;
         public static final int hello_world=0x7f0b000e;
         public static final int label_firstname=0x7f0b0017;
+        public static final int label_icons=0x7f0b001a;
         public static final int label_lessons=0x7f0b0018;
-        public static final int textView_statistics_header=0x7f0b001a;
-        public static final int text_about=0x7f0b0019;
-        public static final int title_activity_preferences=0x7f0b001b;
+        public static final int label_results=0x7f0b0019;
+        public static final int result_mistake=0x7f0b0021;
+        public static final int result_mistakes=0x7f0b0022;
+        public static final int result_text_bad=0x7f0b0020;
+        public static final int result_text_middle=0x7f0b001f;
+        public static final int result_text_perfect=0x7f0b001e;
+        public static final int textView_statistics_header=0x7f0b001c;
+        public static final int text_about=0x7f0b001b;
+        public static final int title_activity_preferences=0x7f0b001d;
     }
     public static final class style {
         /** 

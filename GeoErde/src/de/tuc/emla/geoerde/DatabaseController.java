@@ -139,6 +139,28 @@ public class DatabaseController extends SQLiteOpenHelper
 		return cursor;
 	}
 	
+	public int[] getGeneralMistakes()
+	{
+		int[] result = {0, 0};
+		Cursor cursor = null;
+		
+		if(D) Log.d(LOGCAT,"Read number of message tables");
+		try
+		{
+			database = this.getWritableDatabase();
+			String selectQuery = "SELECT SUM(correct), SUM(total) FROM statistics";
+			cursor = database.rawQuery(selectQuery, null);
+			result[0] = cursor.getInt(0);			
+			result[1] = cursor.getInt(1);
+		}
+		catch(Exception e)
+		{
+			if(D) Log.d(LOGCAT,"(getAllMessageTables) Db-read error: " + e);
+		}
+		
+		return result;
+	}
+	
 	/*
 	 * Method to read the stored records for a specific lesson
 	 */

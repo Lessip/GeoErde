@@ -13,9 +13,17 @@
     <string name="desc_firstname">What is your name</string>
     <string name="label_firstname">Firstname</string>
     <string name="label_lessons">Lessons:</string>
+    <string name="label_results">Results:</string>
+    <string name="label_icons">Icons:</string>
     <string name="text_about">GeoErde was programmed by:\n\n Mariia Shumbasova \nand\n Patric Leßmann\n\n\u00A9 by us!</string>
     <string name="textView_statistics_header">Statistics</string>
     <string name="title_activity_preferences">Preferences</string>
+    <string name="result_text_perfect">, perfectly done! You made no mistakes!</string>
+    <string name="result_text_middle">, almost perfect! You made only </string>
+    <string name="result_text_bad">, you should have a look at the lecture again ;-) You made </string>
+    <string name="result_mistake"> mistake.</string>
+    <string name="result_mistakes"> mistakes.</string>
+    
     
 
 </resources>
