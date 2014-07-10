@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GeoErde</string>
+    <string name="hello_world">Hallo Welt!</string>
+    <string name="hello_maria">Hallo Welt! \n\nHallo Maria! :-)</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_about">Über uns</string>    
+    <string name="button_quiz">Quiz</string>
+    <string name="button_statistics">Statistik</string>
+    <string name="button_close">Schließen</string>
+    <string name="def_firstname">Vorname</string>
+    <string name="desc_firstname">Wie heißt du</string>
+    <string name="label_firstname">Vorname</string>
+    <string name="label_lessons">Lektion:</string>
+    <string name="label_results">Ergebnis:</string>
+    <string name="label_icons">Icon:</string>
+    <string name="text_about">GeoErde wurde programmiert von:\n\n Mariia Shumbasova \nund\n Patric Leßmann\n\n\u00A9 by uns!</string>
+    <string name="textView_statistics_header">Statistik</string>
+    <string name="title_activity_preferences">Einstellungen</string>
+    <string name="result_text_perfect">, perfekt! Alles richtig!</string>
+    <string name="result_text_middle">, fast perfekt! Du hast nur </string>
+    <string name="result_text_bad">, du solltest dir die Lektion noch einmal ansehen ;-) Du hast </string>
+    <string name="result_mistake"> Fehler gemacht.</string>
+    <string name="result_mistakes"> Fehler gemacht.</string>
+    
+    
+
+</resources>
