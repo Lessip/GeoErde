@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_lessons"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+    
+   
+    
+    <Button
+        android:id="@+id/quiz_btnFrance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="QuizFrance"
+        android:text="France" />
+
+   <Button
+        android:id="@+id/quiz_btnUkraine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="QuizUkraine"
+        android:text="Ukraine" />
+   
+    <Button
+        android:id="@+id/quiz_btnGermany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="QuizGermany"
+        android:text="Germany" />
+    
+   
+    
+     <ImageView
+        android:id="@+id/country_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerInside"/>
+    
+</LinearLayout>
+
+
+    

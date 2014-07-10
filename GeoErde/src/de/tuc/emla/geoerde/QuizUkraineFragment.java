@@ -10,28 +10,24 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 
-public class StatisticsFragment extends Fragment implements OnClickListener
+public class QuizUkraineFragment extends Fragment implements OnClickListener
 {
-	public StatisticsFragment()
+	public QuizUkraineFragment()
     {
     }
 	
 	// logging output
-	private static final String LOGCAT = "GeoErde-FragmentStatistic";
+	private static final String LOGCAT = "GeoErde-FragmentUkraine";
 	private static final boolean D = true;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		LinearLayout llayout;
 		
-		View view = inflater.inflate(R.layout.fragment_statistics, container, false);
-				
-		llayout = (LinearLayout) view.findViewById(R.id.layout_statistics);
-		llayout.setOnClickListener(this);
-        
+		View view = inflater.inflate(R.layout.fragment_quiz_ukraine, container, false);
         return view;
 	}
+	
 	
 	/**
      * The eventHandler for the fragment screen

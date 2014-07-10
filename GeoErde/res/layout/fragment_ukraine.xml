@@ -7,24 +7,19 @@
     android:background="#ffffffff"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textHeader"
+    <ImageView
+        android:id="@+id/imageUkraine"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/textView_statistics_header" />
-
-    <ListView
-        android:id="@+id/listViewResults"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
-
+        android:layout_height="420dp"
+        android:contentDescription="Background image"
+        android:scaleType="centerInside"
+        android:src="@drawable/ukraine_map" />
+    
     <TextView
-        android:id="@+id/textViewFazit"
+        android:id="@+id/textUkraine"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="TextView" />
+        android:text="@string/text_ukraine" />
     
 </LinearLayout>
     

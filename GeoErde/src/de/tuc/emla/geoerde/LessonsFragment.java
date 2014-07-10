@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 
-public class StatisticsFragment extends Fragment implements OnClickListener
+public class LessonsFragment extends Fragment implements OnClickListener
 {
-	public StatisticsFragment()
+	public LessonsFragment()
     {
     }
 	
@@ -25,9 +25,9 @@ public class StatisticsFragment extends Fragment implements OnClickListener
 	{
 		LinearLayout llayout;
 		
-		View view = inflater.inflate(R.layout.fragment_statistics, container, false);
+		View view = inflater.inflate(R.layout.fragment_lessons, container, false);
 				
-		llayout = (LinearLayout) view.findViewById(R.id.layout_statistics);
+		llayout = (LinearLayout) view.findViewById(R.id.layout_lessons);
 		llayout.setOnClickListener(this);
         
         return view;
