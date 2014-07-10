@@ -2,6 +2,7 @@
 <resources>
     
     <string-array name="lessons_array">
+        <item> </item>
         <item>Germany</item>
         <item> Saxony</item>
         <item>Ukraine</item>
