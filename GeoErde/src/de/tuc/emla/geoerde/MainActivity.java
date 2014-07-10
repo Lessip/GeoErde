@@ -13,14 +13,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.os.Build;
 
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends ActionBarActivity implements OnItemSelectedListener
 {
 
 	// logging output
 	private static final String LOGCAT = "GeoErde-MainActivity";
 	private static final boolean D = true;
+	
+	private static Spinner spinnerLecture;
 	
 	// the database (incl. instanciation)
 	DatabaseController db = new DatabaseController(this);
@@ -30,7 +38,7 @@ public class MainActivity extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         if (savedInstanceState == null)
         {
             getFragmentManager().beginTransaction()
@@ -43,6 +51,29 @@ public class MainActivity extends ActionBarActivity
     {
     	if(D) Log.d(LOGCAT, "onResume...");
     }
+    
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id)
+    {
+        // An item was selected. You can retrieve the selected item using
+        // parent.getItemAtPosition(pos)
+    	
+    	/*FragmentTransaction transaction = getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new LessonsFragment(parent.getItemAtPosition(pos)));
+        */
+    	if(pos > 0)
+    	{
+    		FragmentTransaction transaction = getFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new StatisticsFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
+    	}
+    }
+
+    public void onNothingSelected(AdapterView<?> parent)
+    {
+        // Another interface callback
+    }
+
     
     @Override
     public void onBackPressed()
@@ -117,6 +148,17 @@ public class MainActivity extends ActionBarActivity
                 Bundle savedInstanceState)
         {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            
+            spinnerLecture = (Spinner) rootView.findViewById(R.id.spinnerContent);
+            // Create an ArrayAdapter using the string array and a default spinner layout
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(),
+                    R.array.lessons_array, android.R.layout.simple_spinner_item);
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            // Apply the adapter to the spinner
+            spinnerLecture.setAdapter(adapter);
+            spinnerLecture.setOnItemSelectedListener((MainActivity)this.getActivity());
+            
             return rootView;
         }
     }
@@ -145,6 +187,6 @@ public class MainActivity extends ActionBarActivity
     	FragmentTransaction transaction = getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new StatisticsFragment());
         transaction.addToBackStack(null);
-        transaction.commit();    	
+        transaction.commit();
     }
 }
