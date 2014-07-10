@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_statistics"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,23 +8,85 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textHeader"
+        android:id="@+id/labelHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:text="@string/textView_statistics_header" />
+    
+    <TextView
+	    android:id="@+id/labelLesson"
+	    android:layout_width="100dp"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/labelHeader"
+	    android:layout_below="@+id/labelHeader"
+	    android:text="@string/label_lessons" />
+	
+	<TextView
+	    android:id="@+id/labelResult"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/labelHeader"
+	    android:layout_toRightOf="@+id/labelLesson"
+	    android:text="@string/label_results" />
+	
+	<TextView
+	    android:id="@+id/labelIcon"
+	    android:layout_width="24dp"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@+id/labelResult"
+	    android:layout_below="@+id/labelHeader"
+	    android:text="@string/label_icons" />
 
-    <ListView
-        android:id="@+id/listViewResults"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+    <ScrollView
+        android:id="@+id/scrollViewResults"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/labelLesson"
+	    android:isScrollContainer="true"
+	    android:visibility="visible" >
+	    
+        <LinearLayout
+            android:id="@+id/linearLayoutResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:orientation="horizontal" >
+   			
+	        <TextView
+		        android:id="@+id/textLesson"
+		        android:layout_width="100dip"
+		        android:layout_height="wrap_content"
+		        android:lineSpacingExtra="4dp"
+		        android:text="Lesson" />
+		    
+		    <TextView
+		        android:id="@+id/textResult"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:lineSpacingExtra="4dp"
+		        android:text="Result text" />
+		    
+		    <ImageView
+		        android:id="@+id/icon"
+		        android:layout_width="24dip"
+		        android:layout_height="wrap_content"
+		        android:contentDescription="Result icons"/>
+		    
+	    </LinearLayout>
+	    
+    </ScrollView>
 
     <TextView
-        android:id="@+id/textViewFazit"
+        android:id="@+id/textFazit"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="TextView" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/scrollViewResults"
+        android:gravity="bottom"
+        android:text="Fazit text" />
     
-</LinearLayout>
+</RelativeLayout>
     

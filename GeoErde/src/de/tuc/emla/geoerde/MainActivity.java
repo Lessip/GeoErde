@@ -1,25 +1,23 @@
 package de.tuc.emla.geoerde;
 
-
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.os.Build;
 
 public class MainActivity extends ActionBarActivity
 {
+
 	// logging output
 	private static final String LOGCAT = "GeoErde-MainActivity";
 	private static final boolean D = true;
@@ -32,14 +30,13 @@ public class MainActivity extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         
+
         if (savedInstanceState == null)
         {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
-        } 
-        
+        }
     }
     
     protected void onResume(Bundle savedInstanceState)
@@ -81,7 +78,7 @@ public class MainActivity extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         FragmentTransaction transaction;
-        FragmentManager.enableDebugLogging(D);
+//		FragmentManager.enableDebugLogging(D);
         switch (id)
         {
         case R.id.action_settings:
@@ -113,7 +110,6 @@ public class MainActivity extends ActionBarActivity
 
         public PlaceholderFragment()
         {
-        	
         }
 
         @Override
@@ -133,23 +129,9 @@ public class MainActivity extends ActionBarActivity
     {
     	if(D) Log.d(LOGCAT, "Quiz button pressed...");
     	
-//    	 open the SendActivity with its own view
-		Intent intent = new Intent(this, QuizActivity.class);
-		startActivity(intent);
-    }
-    
-    /**
-     * The eventHandler for the lessons-button
-     * @param view the view of the main activity
-     */    
-    public void buttonLessons(View view)
-    {
-    	if(D) Log.d(LOGCAT, "Lessons button pressed...");
-    	
-//    	open the SendActivity with its own view
-		Intent intent = new Intent(this, LessonsActivity.class);
-		startActivity(intent);
-		
+    	// open the SendActivity with its own view
+//		Intent intent = new Intent(this, QuizActivity.class);
+//		startActivity(intent);
     }
     
     /**

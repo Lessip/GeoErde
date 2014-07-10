@@ -26,7 +26,7 @@ public class DatabaseController extends SQLiteOpenHelper
 	// the constructor which creates the database
 	public boolean getActiveTransactionState()
 	{
-		return activeTransaction;
+		return database.inTransaction();
 	}
 	
 	// start a new database transaction
@@ -92,7 +92,7 @@ public class DatabaseController extends SQLiteOpenHelper
 		String CREATE_TABLE_MEASUREMENTS =
 				"CREATE TABLE IF NOT EXISTS statistics ("
 				+ "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-				+ "lesson STRING,"
+				+ "lesson TEXT,"
 				+ "total INTEGER,"
 		        + "correct INTEGER,"
 		    	+ "date_time INTEGER);";
@@ -119,7 +119,7 @@ public class DatabaseController extends SQLiteOpenHelper
 	/*
 	 * Method to read all stored records from the database
 	 */
-	public Cursor getStoredValues()
+	public Cursor getGeneralResult()
 	{
 		Cursor cursor = null;
 		
@@ -127,7 +127,52 @@ public class DatabaseController extends SQLiteOpenHelper
 		try
 		{
 			database = this.getWritableDatabase();
-			String selectQuery = "SELECT  * FROM statistics";
+			String selectQuery = "SELECT  * FROM statistics GROUP BY lesson ORDER BY lesson;";
+			cursor = database.rawQuery(selectQuery, null);
+		    
+		}
+		catch(Exception e)
+		{
+			if(D) Log.d(LOGCAT,"(getStoredValues) Db-read error: " + e);
+		}
+		
+		return cursor;
+	}
+	
+	public int[] getGeneralMistakes()
+	{
+		int[] result = {0, 0};
+		Cursor cursor = null;
+		
+		if(D) Log.d(LOGCAT,"Read number of message tables");
+		try
+		{
+			database = this.getWritableDatabase();
+			String selectQuery = "SELECT SUM(correct), SUM(total) FROM statistics";
+			cursor = database.rawQuery(selectQuery, null);
+			result[0] = cursor.getInt(0);			
+			result[1] = cursor.getInt(1);
+		}
+		catch(Exception e)
+		{
+			if(D) Log.d(LOGCAT,"(getAllMessageTables) Db-read error: " + e);
+		}
+		
+		return result;
+	}
+	
+	/*
+	 * Method to read the stored records for a specific lesson
+	 */
+	public Cursor getLessonResult(String lesson)
+	{
+		Cursor cursor = null;
+		
+		if(D) Log.d(LOGCAT,"Read all DB entries");
+		try
+		{
+			database = this.getWritableDatabase();
+			String selectQuery = "SELECT  * FROM statistics WHERE lesson='" + lesson + "';";
 			cursor = database.rawQuery(selectQuery, null);
 		    
 		}
